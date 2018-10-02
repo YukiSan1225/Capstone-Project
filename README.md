@@ -1,1 +1,1 @@
-# Capstone-Project E-RPG-Encoder
+# E-RPG Encoder
