@@ -1,0 +1,191 @@
+	•			<script>
+	•			function checkURL()
+	•			{
+	•				function getQueryVariable(variable)
+	•				{
+	•			       var query = window.location.search.substring(1);
+	•			       var vars = query.split("&");
+	•			       for (var i=0;i<vars.length;i++) {
+	•			               var pair = vars[i].split("=");
+	•			               if(pair[0] == variable){return pair[1];}
+	•			       }
+	•			       return(false);
+	•				}
+	•			 
+	•				var message = getQueryVariable("message"); 
+	•				switch(message)
+	•				{
+	•					case "unsuccessful" : 
+	•					{
+	•						message = "Internal Server Error. Try Again Later.";
+	•					}
+	•					break;
+	•					case "emailalreadyexists" : 
+	•					{
+	•						message = "This Email/Phone Already Exists. Try Different One.";
+	•					}
+	•					break;
+	•					case "passwordmismatch" : 
+	•					{
+	•						message = "Password Didn't Match.";
+	•					}
+	•					break;
+	•					case "upwrong" : 
+	•					{
+	•						message = "either username or password is wrong.";
+	•					}
+	•					break;
+	•					case "insufficient" : 
+	•					{
+	•						message = "Any Of The Field Is Missing";
+	•					}
+	•					break;
+	•					case "unauthorised" : 
+	•					{
+	•						message = "You Need To Login First To See This Page.";
+	•					}
+	•					break;
+	•					case "verificationSuccessful" : 
+	•					{
+	•						message = "You Have Successfully Verified Your Email Address";
+	•					}
+	•					break;
+	•					case "verificationAlreadyDone" : 
+	•					{
+	•						message = "Your already have verified your email address.";
+	•					}
+	•					break;
+	•					
+	•					case "loginAgainWithNewPassword" :
+	•					{
+	•						message = "Login again with new password";
+	•					}
+	•					break; 
+	•					
+	•					default :
+	•					{
+	•						document.getElementById('alert').style.display = "none";
+	•						message = ""
+	•					}
+	•				}
+	•			 
+	•				document.getElementById('alert').innerHTML = message;
+	•			}
+	•			</script> 
+Visual Form
+	•			<div class="panel panel-default shadowpanel" id='customerLoginForm'> 
+	•				<div class="panel-body tabs">
+	•					<ul class="nav nav-tabs pull-center">
+	•						<li class="active"><a href="#tab1" data-toggle="tab"><span class='glyphicon glyphicon-log-in'> </span> Login</a></li>
+	•						<li><a href="#tab2" data-toggle="tab"><span class='glyphicon glyphicon-user'> </span> Sign Up</a></li>
+	•					</ul>
+	•									
+	•					<div class="tab-content">
+	•						<div class="tab-pane fade in active" id="tab1">
+	•							<h3>Welcome Back !</h3><BR/>
+	•							<form name='login_form' method='POST' action='login.php'>
+	•							
+	•							<div class="form-group">
+	•								<label for='email'>E-mail </label>
+	•								<input class="form-control" type='text' name='email' id='email' placeholder="yourname@gmail.com" autofocus="" required>
+	•							</div>
+	•			 
+	•							<div class="form-group">
+	•								<label for='password'>Password</label>
+	•									<input type="password" class="form-control" type='password' name='password' id='password' placeholder='password' required>
+	•							</div>
+	•											
+	•							<div class="form-group">
+	•								<a href='forgotPassword.php'>Forgot Password ?</a>
+	•							</div>
+	•											
+	•							<div class="form-group text-right">
+	•								<input type="submit" value='Login' name='login' class="btn btn-primary btn-lg" />
+	•							</div>
+	•							
+	•							</form> <!--End of Login Form-->
+	•											
+	•						</div>
+	•						
+	•						<!--Signup Tab-->				
+	•						<div class="tab-pane fade" id="tab2">
+	•							<h3>Warm Welcome Text</h3><BR/>
+	•									
+	•							<form name='signup_form' method='POST' action='signup.php'  onsubmit="return validateMyForm()">
+	•							<div class='row'>
+	•								<div class='col-md-6'>
+	•									<div class="form-group">
+	•										<label>First Name</label>
+	•										<input class="form-control" type='text' name='first' id='first' placeholder="John" autofocus="" required>
+	•									</div>
+	•								</div>
+	•												
+	•								<div class='col-md-6'>
+	•									<div class="form-group">
+	•										<label>Last Name</label>
+	•										<input class="form-control" type='text' name='last' id='last' placeholder="Doe" required>
+	•									</div>
+	•								</div>
+	•							</div>
+	•											
+	•						<div class='row'>
+	•							<div class='col-md-6'>
+	•								<div class="form-group">
+	•									<label>E-mail </label>
+	•									<input class="form-control" type='text' name='email' id='signup_email' placeholder="yourname@gmail.com" required>
+	•								</div>
+	•							</div>
+	•												
+	•							<div class='col-md-6'>
+	•								<label>Phone</label>
+	•								<input class="form-control" type='text' name='phone' id='phone' placeholder="70XXX99XXX" onkeyup="checkphonenumber(this.value);" required>
+	•							</div>
+	•						</div>
+	•											
+	•											
+	•						<div class='row'>
+	•							<div class='col-md-6'>
+	•								<div class="form-group">
+	•									<label>Password</label>
+	•									<input type="password" class="form-control" name='pass1' id='pass1' placeholder='password' required>
+	•								</div>
+	•							</div>
+	•												
+	•							<div class='col-md-6'>
+	•								<div class="form-group">
+	•									<label>Retype Password</label>
+	•										<input type="password" class="form-control" name='pass2' id='pass2' placeholder='retype-password' oninput='checkpassword();' required>
+	•								</div>	
+	•							</div>
+	•						</div>
+	•											
+	•							<div class="form-group">
+	•								<input type='checkbox' name='agreement' id='agreement' onchange='disable_register();'> I agree <a data-toggle='modal' href='#agg'>terms and conditions of</a><span class='text-primary'> company name </a>
+	•							</div>
+	•											
+	•							<div class="form-group pull-right">
+	•								<input type="submit" value='Sign Up' name='signup' id='signup' class="btn btn-primary btn-lg">
+	•							</div>
+	•											
+	•						</form>
+	•					</div>
+	•				</div>
+	•			</div>
+	•			</div> <!--/.panel-->
+Validate.js contains validation code.
+Validate Signup activity at user side. Include this in login.html
+	•			//Listen For Form Submit
+	•			 
+	•			function validateMyForm(e)
+	•			{
+	•			  var first = document.getElementById('first').value;
+	•			  var last = document.getElementById('last').value;
+	•			  var email = document.getElementById('signup_email').value;
+	•			  var phone = document.getElementById('phone').value;
+	•			  var pass1 = document.getElementById('pass1').value;
+	•			  var pass2 = document.getElementById('pass2').value;
+	•			  var checkbox = document.getElementById('aggrement');
+	•			 
+	•			if(!validateForm(first, last, email, phone, pass1, pass2, checkbox)){
+	•				
+	•			  return false;
