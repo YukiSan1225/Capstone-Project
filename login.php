@@ -41,8 +41,8 @@ if(isset($_SESSION['login_user'])){
         Password:<br>
         <input type="text" name="password" placeholder="***************" type="text"></br>
         <input type="submit" value="Login">
+        <span><?php echo $error; ?></span>
     </form>
-
     <footer>
       <p>Team Blanco, Copyright &copy; 2017</p>
     </footer>
