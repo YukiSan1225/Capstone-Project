@@ -1,11 +1,11 @@
 
-CREATE TABLE [IF NOT EXISTS] CUSTOMER (
+CREATE TABLE CUSTOMER (
 customerID int (8),
- LName varchar(30) [not null],
- FName varchar(30) [not null],
- Email_Address varchar(30) [not null],
- Phone char(10) [not null],
- Password varchar (30) [not null],
+ LName varchar(30) NOT NULL,
+ FName varchar(30) NOT NULL,
+ Email_Address varchar(30) NOT NULL,
+ Phone char(10) NOT NULL,
+ Password varchar (30) NOT NULL,
  primary key (customerID)
  );
 
