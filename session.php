@@ -12,6 +12,6 @@ $row=mysqli_fetch_assoc($sqlsession);
 $login_session=$row['username'];
 if(!isset($login_session)){
     mysqli_close($conn);
-    header('Location: index.php');
+    header('Location: index.html');
 }
 ?>
