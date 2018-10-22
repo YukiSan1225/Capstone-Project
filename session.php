@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","");
+$conn = mysqli_connect("localhost","admin","pass");
 
 $db = mysqli_select_db("CUSTOMER", $conn);
 

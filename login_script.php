@@ -1,5 +1,5 @@
 <?php
-$dbh = mysqli_connect('localhost', 'root', '');
+$dbh = mysqli_connect('localhost', 'admin', 'pass');
 if (!$dbh) {
     die('Could not connect: ' . mysqli_error());
 }
