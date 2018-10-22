@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost","root","","Customer");
+$conn = mysqli_connect("localhost","root","","CUSTOMER");
 	
 $message="";
 if(!empty($_POST["login"])) {
