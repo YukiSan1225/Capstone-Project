@@ -27,7 +27,7 @@
       </div>
     </header>
 
-    <form action="login_script" method="post"> <!--Need to create this file-->
+    <form action="login_script.php" method="post"> <!--Need to create this file-->
         Email:<br>
         <input type="text" name="email" placeholder="email" type="text"><br>
         Password:<br>
