@@ -15,7 +15,7 @@ $result = mysqli_query("SELECT Email_Address, Password FROM CUSTOMER WHERE Email
 $row = mysqli_fetch_array($result);
 
 if($row["email"]==$email && $row["password"]==$pass)
-header('location: LoginHomePage.html');
+echo"You got the right one"
 else
 echo"Email or password is invalid."
 ?>
