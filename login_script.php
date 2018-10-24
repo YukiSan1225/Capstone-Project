@@ -18,7 +18,7 @@ $password = stripslashes($password);
 $email = mysqli_real_escape_string($email);
 $password = mysqli_real_escape_string($password);
 // Selecting Database
-$db = mysqli_select_db($connection, "CUSTOMER"));
+$db = mysqli_select_db($connection, "CUSTOMER");
 // SQL query to fetch information of registerd users and finds user match.
 $query = mysqli_query("select * from CUSTOMER where Password='$password' AND Email_Address='$email'", $connection);
 $rows = mysqli_num_rows($query);
