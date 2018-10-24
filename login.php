@@ -36,11 +36,11 @@ if(isset($_SESSION['login_user'])){
     </header>
 
     <form action="" method="post"> <!--Need to create this file-->
-        Username:<br>
-        <input type="text" name="username" placeholder="username" type="text"><br>
+        Email:<br>
+        <input type="text" name="email" placeholder="email" type="text"><br>
         Password:<br>
-        <input type="text" name="password" placeholder="***************" type="text"></br>
-        <input type="submit" value="Login">
+        <input type="text" name="password" placeholder="***************" type="password"></br>
+        <input type="submit" value="Submit">
         <span><?php echo $error; ?></span>
     </form>
     <footer>
