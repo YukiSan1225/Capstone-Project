@@ -32,7 +32,7 @@
         <input type="text" name="email" placeholder="email" type="text"><br>
         Password:<br>
         <input type="text" name="password" placeholder="***************" type="password"></br>
-        <input type="submit" value="Submit">
+        <input type="submit" name="submit" value="Login">
         <span><?php echo $error; ?></span>
     </form>
     <footer>
