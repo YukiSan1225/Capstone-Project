@@ -1,6 +1,6 @@
 <?php include('login_script.php'); 
 if(isset($_SESSION['login_user'])){
-header("location: LoginHomePage.php")
+header("location: LoginHomePage.php");
 }?>
 <!DOCTYPE html>
 <html>
