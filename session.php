@@ -1,13 +1,11 @@
 <?php
-$conn = mysqli_connect("localhost","admin","pass");
-
-$db = mysqli_select_db("CUSTOMER", $conn);
+$conn = mysqli_connect("localhost","admin","pass","CUSTOMER");
 
 session_start();
 
 $user=$_SESSION['login_user'];
 
-$sqlsession = mysqli_query("select Email_Address from CUSTOMER where Email_Address='$user'", $conn);
+$sqlsession = mysqli_query($conn,"select Email_Address from CUSTOMER where Email_Address='$user'");
 $row=mysqli_fetch_assoc($sqlsession);
 $login_session=$row['email'];
 if(!isset($login_session)){
