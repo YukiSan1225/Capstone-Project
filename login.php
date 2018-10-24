@@ -1,11 +1,3 @@
-<?php
-include('login_script.php');
-
-if(isset($_SESSION['login_user'])){
-  header("location: LoginHomePage.html");
-}
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,7 +27,7 @@ if(isset($_SESSION['login_user'])){
       </div>
     </header>
 
-    <form action="" method="post"> <!--Need to create this file-->
+    <form action="post" method="login_script.php"> <!--Need to create this file-->
         Email:<br>
         <input type="text" name="email" placeholder="email" type="text"><br>
         Password:<br>
