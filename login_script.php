@@ -22,7 +22,7 @@ $password = mysqli_real_escape_string($password);
 $query = mysqli_query($connection,"select * from CUSTOMER where Password='$password' AND Email_Address='$email'");
 $rows = mysqli_num_rows($query);
 if ($rows == 1) {
-$_SESSION['login_user']=$username; // Initializing Session
+$_SESSION['login_user']=$email; // Initializing Session
 header("location: LoginHomePage.php"); // Redirecting To Other Page
 } else {
 $error = "Email or Password is invalid";
