@@ -29,7 +29,7 @@ include('session.php');
     <div>
         <center>
             <h1 style="font-size: 500%">
-                Hello {"NameVariable"}!
+                Hello <?php echo $login_session;?>!
             </h1>
         </center>
     </div>
