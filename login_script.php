@@ -24,7 +24,7 @@ $rows = mysqli_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$email; // Initializing Session
 header("Location: LoginHomePage.php"); // Redirecting To Other Page
-exit;
+die();
 } else {
 $error = "Email or Password is invalid";
 }
