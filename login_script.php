@@ -13,10 +13,10 @@ $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 $connection = mysqli_connect("localhost", "admin", "pass","CUSTOMER");
 // To protect MySQL injection for Security purpose
-$email = stripslashes($email);
-$password = stripslashes($password);
-$email = mysqli_real_escape_string($email);
-$password = mysqli_real_escape_string($password);
+//$email = stripslashes($email);
+//$password = stripslashes($password);
+//$email = mysqli_real_escape_string($email);
+//$password = mysqli_real_escape_string($password);
 
 // SQL query to fetch information of registerd users and finds user match.
 $query = mysqli_query($connection,"select * from CUSTOMER where Password='$password' AND Email_Address='$email'");
