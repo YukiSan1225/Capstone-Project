@@ -23,8 +23,8 @@ $query = mysqli_query($connection,"select * from CUSTOMER where Password='$passw
 $rows = mysqli_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$email; // Initializing Session
-header("Location: LoginHomePage.php"); // Redirecting To Other Page
-die();
+header("Location: /LoginHomePage.php"); // Redirecting To Other Page
+exit();
 } else {
 $error = "Email or Password is invalid";
 }
