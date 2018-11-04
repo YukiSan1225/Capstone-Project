@@ -101,8 +101,9 @@ a {
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
     <button type="submit" name="submit" class="submit1">Register</button>
-  </div>
-  
+    <span class="text-success"><?php if (isset($successmsg)) { echo $successmsg; } ?></span>
+  <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>  
+</div>
   <div class="container signin">
     <p>Already have an account? <a href="login.php">Sign in</a>.</p>
   </div>

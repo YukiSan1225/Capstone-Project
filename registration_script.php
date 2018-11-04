@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'dbconnect.php';
+$con = mysqli_connect("localhost", "admin", "pass", "CUSTOMER");
 //set validation error flag as false
 $error = false;
 
