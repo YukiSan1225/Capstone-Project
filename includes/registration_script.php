@@ -11,7 +11,7 @@ include_once 'dbconnect.php';
 $error = false;
 
 //check if form is submitted
-if (isset($_POST['signup'])) {
+if (isset($_POST['submit'])) {
     $fname = mysqli_real_escape_string($con, $_POST['first_name']);
     $lname = mysqli_real_escape_string($con, $_POST['last_name']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
