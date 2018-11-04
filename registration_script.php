@@ -39,7 +39,8 @@ if (isset($_POST['submit'])) {
         $cpassword_error = "Password and Confirm Password doesn't match";
     }
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO `CUSTOMER` (customerID, LName, FName, Email_Address, Phone, Password) VALUES ($customerID, '$lname','$fname', '$email', '$phone', '".md5($password)."')")) {
+        $password = md5($password);
+        if(mysqli_query($con, "insert into CUSTOMER (customerID, LName, FName, Email_Address, Phone, Password) VALUES ('$customerID','$lname','$fname','$email','$phone','$password')") {
             $successmsg = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
         } else {
             $errormsg = "Error in registering...Please try again later!";
