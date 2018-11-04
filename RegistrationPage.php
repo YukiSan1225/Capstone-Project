@@ -1,3 +1,8 @@
+<?php include('registration_script.php');
+if(isset($_SESSION['usr_id'])) {
+    header("Location: index.html");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +74,7 @@ a {
 </head>
 <body>
 
-<form action="registration_script.php">
+<form action="" method="post">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>

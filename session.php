@@ -10,7 +10,7 @@ $row=mysqli_fetch_array($sqlsession, MYSQLI_ASSOC);
 $login_session=$row['email'];
 if(!isset($login_session)){
     mysqli_close($conn);
-    header('Location: /login.html');
+    header('Location: /login.php');
     exit();
 }
 ?>
