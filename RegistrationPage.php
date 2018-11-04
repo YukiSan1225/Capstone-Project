@@ -100,7 +100,7 @@ a {
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-    <button type="submit" class="submit">Register</button>
+    <button type="submit" name="submit" class="submit">Register</button>
   </div>
   
   <div class="container signin">
