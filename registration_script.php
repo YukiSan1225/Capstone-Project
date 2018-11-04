@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(isset($_SESSION['usr_id'])) {
-    header("Location: index.html");
-}
 include_once 'dbconnect.php';
 //set validation error flag as false
 $error = false;
