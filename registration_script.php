@@ -6,13 +6,13 @@ $error = false;
 
 //check if form is submitted
 if (isset($_POST['submit'])) {
-    $fname = mysqli_real_escape_string($con, $_POST['first_name']);
-    $lname = mysqli_real_escape_string($con, $_POST['last_name']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-    $cpassword = mysqli_real_escape_string($con, $_POST['repeat_password']);
-    $customerID = rand(1000,100000);
+    $fname = $_POST['first_name'];
+    $lname = $_POST['last_name'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['repeat_password'];
+    $customerID = rand(1000,10000);
     //name can contain only alpha characters and space
     if (!preg_match("/^[a-zA-Z ]+$/",$fname)) {
         $error = true;
