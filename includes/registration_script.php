@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['usr_id'])) {
-    header("Location: index.php");
+    header("Location: index.html");
 }
 
 include_once 'dbconnect.php';
@@ -28,7 +28,7 @@ if (isset($_POST['signup'])) {
         $error = true;
         $name_error = "Name must contain only alphabets";
     }
-    if (!preg_match("/^[0-9]+$/",$phone)) {
+    if (!preg_match("/[^0-9]/",$phone)) {
         $error = true;
         $name_error = "Phone must contain only numbers";
     }
