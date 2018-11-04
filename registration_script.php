@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $cpassword = mysqli_real_escape_string($con, $_POST['repeat_password']);
-    
+    $customerID = rand(1000,100000);
     //name can contain only alpha characters and space
     if (!preg_match("/^[a-zA-Z ]+$/",$fname)) {
         $error = true;
