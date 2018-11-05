@@ -22,16 +22,10 @@ include_once 'connect.php';
         <nav>
             <ul>
                 <li class="current"><a href="index.php">Home</a></li>
-                <?php if (isset($_SESSION['usr_id']) { ?>
-                <li><p>Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
-                <li><a href="homepage.php">Account</a></li>
-                <li><a href="logout.php">Log Out</a></li>
-                <?php } else { ?>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.php">Login</a></li>
                 <li><a href="register.php">Register</a></li>
-                <?php } ?>
             </ul>
         </nav>
     </div>

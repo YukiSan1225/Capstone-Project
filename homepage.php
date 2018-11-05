@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+include_once 'connect.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +30,7 @@
     <div>
         <center>
             <h1 style="font-size: 500%">
-                Hello <?php echo $login_session;?>!
+                Hello <?php echo $_SESSION['usr_name'];?>!
             </h1>
         </center>
     </div>
