@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
     $lname = mysqli_real_escape_string($con, $_POST['last_name']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-    $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+    $password = md5($_POST['password']);
+    $cpassword = md5($_POST['cpassword']);
     $cid = rand(2000,4000);
     
     //name can contain only alpha characters and space
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
         $cpassword_error = "Password and Confirm Password doesn't match";
     }
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO CUSTOMER(customerID ,Lname, FName, Email_Address, Phone, Password) VALUES ('" . $cid . "', '" . $lname . "', '" . $fname . "', '" . $email . "', '" . $phone . "','" . md5($password) . "')")) {
+        if(mysqli_query($con, "INSERT INTO CUSTOMER(customerID ,Lname, FName, Email_Address, Phone, Password) VALUES ('" . $cid . "', '" . $lname . "', '" . $fname . "', '" . $email . "', '" . $phone . "','" . $password . "')")) {
             $successmsg = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
         } else {
             $errormsg = "Error in registering...Please try again later!";
