@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
     $lname = mysqli_real_escape_string($con, $_POST['last_name']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $password = md5($_POST['password']);
-    $cpassword = md5($_POST['cpassword']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
     $cid = rand(2000,4000);
     
     //name can contain only alpha characters and space
