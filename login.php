@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = md5($_POST['password'])
-    $result = mysqli_query($con, "SELECT * FROM CUSTOMER WHERE Email_Address = '" . $email. "' and Password = '" . md5($password) . "'");
+    $result = mysqli_query($con, "SELECT * FROM CUSTOMER WHERE Email_Address = '" . $email. "' and Password = '" . $password . "'");
 
     if ($row = mysqli_fetch_array($result)) {
         $_SESSION['usr_id'] = $row['customerID'];
