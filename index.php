@@ -23,7 +23,7 @@ include_once 'connect.php';
             <ul>
                 <li class="current"><a href="index.php">Home</a></li>
                 <?php if (isset($_SESSION['usr_id']) { ?>
-                <li><p class="navbar-text">Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
+                <li><p>Signed in as <?php echo $_SESSION['usr_name']; ?></p></li>
                 <li><a href="homepage.php">Account</a></li>
                 <li><a href="logout.php">Log Out</a></li>
                 <?php } else { ?>
