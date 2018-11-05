@@ -73,7 +73,8 @@ include_once 'connect.php';
         </div>
     </div>
 </section>
-
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <footer>
     <p>Team Blanco, Copyright &copy; 2017</p>
 </footer>

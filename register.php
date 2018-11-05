@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Koding Made Simple</a>
+            <a class="navbar-brand" href="index.php">E-RPG</a>
         </div>
         <!-- menu items -->
         <div class="collapse navbar-collapse" id="navbar1">
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="form-group">
                         <label for="name">Phone</label>
-                        <input type="text" name="phone" placeholder="Enter Full Name" required value="<?php if($error) echo $name; ?>" class="form-control" />
+                        <input type="text" name="phone" placeholder="Enter Phone Number" required value="<?php if($error) echo $name; ?>" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label for="name">Password</label>
