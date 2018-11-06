@@ -1,22 +1,24 @@
 
-CREATE TABLE cuslogin (
-LName varchar(30) NOT NULL,
+CREATE TABLE customer (
+cusid int(10) not null AUTO_INCREMENT,
+ LName varchar(30) NOT NULL,
  FName varchar(30) NOT NULL,
  Email_Address varchar(50) NOT NULL,
  Phone char(10) NOT NULL,
  Password varchar (30) NOT NULL,
- primary key (Email_Address)
+ primary key (cusid)
  );
 
-INSERT INTO CUSLOGIN (Lname, FName, Email_Address, Phone, Password) VALUES ("Burks","Damien","dburksgtr@gmail.com","8320901324","IHateYou");
-INSERT INTO CUSLOGIN (Lname, FName, Email_Address, Phone, Password) VALUES ("Johnson","Maria","mariadb@gmail.com","7810392456","ILoveYou");
+INSERT INTO customer (Lname, FName, Email_Address, Phone, Password) VALUES ("Burks","Damien","dburksgtr@gmail.com","8320901324","IHateYou");
+INSERT INTO customer (Lname, FName, Email_Address, Phone, Password) VALUES ("Johnson","Maria","mariadb@gmail.com","7810392456","ILoveYou");
 
 CREATE TABLE cushome (
 website_name varchar(50) NOT NULL,
-    email_address varchar(30) NOT NULL,
+    cusid varchar(30) NOT NULL,
     password varchar(30) NOT NULL,
-    CONSTRAINT `fk_cuslogin_email`
-        FOREIGN KEY (email_address) REFERENCES cuslogin (Email_Address)
+    CONSTRAINT `fk_cusid`
+        FOREIGN KEY (cusid) REFERENCES customer (cusid)
         ON DELETE CASCADE
         ON UPDATE RESTRICT
 );
+insert into cushome (website_name,email_address,password) values ()
