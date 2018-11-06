@@ -21,4 +21,6 @@ website_name varchar(50) NOT NULL,
         ON DELETE CASCADE
         ON UPDATE RESTRICT
 );
-insert into cushome (website_name,email_address,password) values ()
+insert into cushome (website_name,cusid,password) values ("www.facebook.com",1,"niwpoherowha;rbne;bauogfe");
+insert into cushome (website_name,cusid,password) values ("web.groupme.com",1,"lailfdnabfueowbagerw");
+insert into cushome (website_name,cusid,password) values ("www.capitalone.com",1,"lanfodnwofnewfdsafdwa");
