@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
         $_SESSION['usr_name'] = $row['FName'];
         header("Location: homepage.php");
     } else {
-        $errormsg = "Incorrect Email or Password!!!";
+        $errormsg = "Incorrect email and password!";
     }
 }
 ?>
