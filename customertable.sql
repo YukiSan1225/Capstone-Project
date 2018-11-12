@@ -5,7 +5,7 @@ cusid int(10) not null AUTO_INCREMENT,
  FName varchar(30) NOT NULL,
  Email_Address varchar(50) NOT NULL,
  Phone char(10) NOT NULL,
- Password varchar (30) NOT NULL,
+ Password varchar (255) NOT NULL,
  primary key (cusid)
  );
 

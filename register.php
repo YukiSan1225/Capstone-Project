@@ -40,12 +40,20 @@ if (isset($_POST['submit'])) {
         $error = true;
         $cpassword_error = "Password and Confirm Password doesn't match";
     }
+    //Check to see if user exists in DB
+    $prevUser = mysqli_query($con, "SELECT * from customer where Email_Address='" . $email . "'");
+    if($row = mysqli_fetch_array($prevUser)){
+        $error = true;
+        $email_error="Please use another email address.";
+    }
+    else{
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES ('" . $lname . "', '" . $fname . "', '" . $email . "', '" . $phone . "','" . $password . "')")) {
+        if(mysqli_query($con, "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES ('" . $lname . "', '" . $fname . "', '" . $email . "', '" . $phone . "', sha1('" . $password . "'))")) {
             $successmsg = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
         } else {
             $errormsg = "Error in registering...Please try again later!";
         }
+    }
     }
 }
 ?>
