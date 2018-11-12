@@ -59,7 +59,7 @@ if(isset($_POST) & !empty($_POST)){
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4 well">
-            <form role="form" action="send_link.php" method="post">
+            <form role="form" method="POST">
                 <fieldset>
                     <legend>Password Reset</legend>
                     <p>Enter an email address to send password information</p>
