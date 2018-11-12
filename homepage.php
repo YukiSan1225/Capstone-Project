@@ -42,7 +42,7 @@ include_once 'connect.php';
     <section id="infoBox">
         <?php
         $id = $_SESSION['usr_id'];
-        $result=mysqli_query($con, "SELECT website_name, email_username, password from cushome where id='". $id . "'");
+        $result=mysqli_query($con, "SELECT website_name, email_username, password from cushome where cusid='". $id . "'");
         if(mysqli_num_rows($result) > 0){
             echo "<table><tr>
                 <th>URL</th>
