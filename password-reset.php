@@ -69,11 +69,6 @@ if(isset($_POST) & !empty($_POST)){
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Password</label>
-                        <input type="password" name="password" placeholder="Your Password" required class="form-control" />
-                    </div>
-
-                    <div class="form-group">
                         <input type="submit" name="submit_email" value="password-reset" class="btn btn-primary" />
                     </div>
                 </fieldset>
