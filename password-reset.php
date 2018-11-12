@@ -11,7 +11,8 @@ if(isset($_POST) & !empty($_POST)){
         $output='<p>Dear user,</p>';
         $output.='<p>Please refer to the password that is listed below. If you need to change your password, please use the password below to login and change it.</p>';
         $output.='<p>-------------------------------------------------------------</p>';
-        $output.='<p>Password: '.$password.'</p>';		
+        $output.='<p>Password: ';
+        $output.=$password.'</p>';		
         $output.='<p>-------------------------------------------------------------</p>';
         $output.='<p>Please be sure to delete this email once you have copied your password.</p>';
         $output.='<p>Thanks,</p>';
