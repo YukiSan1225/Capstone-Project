@@ -8,15 +8,41 @@ if(isset($_POST) & !empty($_POST)){
         $password = $r['Password'];
         $name = $r['FName'];
         $to = $r['Email_Address'];
-        $subject = "Your Recovered Password: ERPG Encoder";
+        $output='<p>Dear user,</p>';
+        $output.='<p>Please refer to the password that is listed below. If you need to change your password, please use the password below to login and change it.</p>';
+        $output.='<p>-------------------------------------------------------------</p>';
+        $output.='<p>Password: ';
+        $output.=$password.'</p>';		
+        $output.='<p>-------------------------------------------------------------</p>';
+        $output.='<p>Please be sure to delete this email once you have copied your password.</p>';
+        $output.='<p>Thanks,</p>';
+        $output.='<p>ERPG Support Team</p>';
+        $body = $output; 
+        $subject = "Password Recovery - ERPG Support Team";
 
-        $message = "Hello '$name'! Please use this password to login: " . $password;
-        $headers = "From: info.erpg@gmail.com";
-        if(mail($to, $subject, $message, $headers)){
-            echo "Your Password has been sent to your email";
-        }
-        else{
-            echo "Failed to email your password. Please contact info.erpg@gmail.com for further assistance.";
+        $email_to = $email;
+        $fromserver = "info.erpg@gmail.com"; 
+        require("PHPMailer/PHPMailerAutoload.php");
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->Host = "smtp.gmail.com"; // Enter your host here
+        $mail->SMTPAuth = true;
+        $mail->Username = "info.erpg@gmail.com"; // Enter your email here
+        $mail->Password = "ERPG_Encoder1"; //Enter your password here
+        $mail->Port = 465;
+        $mail->IsHTML(true);
+        $mail->From = "info.erpg@gmail.com";
+        $mail->FromName = "ERPG Support Team";
+        $mail->Sender = $fromserver; // indicates ReturnPath header
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->AddAddress($email_to);
+        if(!$mail->Send()){
+        echo "Mailer Error: " . $mail->ErrorInfo;
+        }else{
+        echo "<div class='error'>
+        <p>An email has been sent to you with instructions on how to reset your password.</p>
+        </div><br /><br /><br />";
         }
     }
     else{
