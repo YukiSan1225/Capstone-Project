@@ -2,8 +2,7 @@
 require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $sql="SELECT * FROM customer where Email_Address='$email'";
-    $result=mysqli_query($con, $sql);
+    $result=mysqli_query($con, "SELECT * FROM customer WHERE Email_Address = '" . $email ."'");
     if(mysqli_num_rows($result) == 1){
         $r = mysqli_fetch_assoc($res);
         $password = $r['Password'];
@@ -17,11 +16,11 @@ if(isset($_POST) & !empty($_POST)){
             echo "Your Password has been sent to your email";
         }
         else{
-            echo "Fialed to email your password. Please contact info.erpg@gmail.com for further assistance.";
+            echo "Failed to email your password. Please contact info.erpg@gmail.com for further assistance.";
         }
     }
     else{
-        echo "Username doesn't exist in database";
+        echo "Email doesn't exist in database";
     }
 }
 ?>
@@ -69,7 +68,7 @@ if(isset($_POST) & !empty($_POST)){
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" name="submit_email" value="password-reset" class="btn btn-primary" />
+                        <input type="submit" name="submit_email" value="Submit" class="btn btn-primary" />
                     </div>
                 </fieldset>
             </form>
