@@ -41,7 +41,6 @@ include_once 'connect.php';
     <body>
     <section id="infoBox">
         <?php
-        include 'connect.php';
         $id = $_SESSION['usr_id'];
         $result=mysqli_query($con, "SELECT website_name, email_username, password from cushome where id='". $id . "'");
         if(mysqli_num_rows($result) > 0){
