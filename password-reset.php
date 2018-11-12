@@ -2,7 +2,7 @@
 require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $sql="SELECT * FROM `customer` where Email_Address='$email'";
+    $sql="SELECT * FROM customer where Email_Address='$email'";
     $result=mysqli_query($con, $sql);
     if(mysqli_num_rows($result) == 1){
         $r = mysqli_fetch_assoc($res);
