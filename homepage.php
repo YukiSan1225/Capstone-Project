@@ -49,7 +49,7 @@ include_once 'connect.php';
                 <th>EMAIL/USERNAME</th>
                 <th>PASSWORD</th>
                 </tr>";
-            while($row = mysqli_fetch_row($result)){
+            while($row = mysqli_fetch_assoc($result)){
                 echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td></tr>";
             }
             echo "</table>";
