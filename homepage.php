@@ -40,16 +40,24 @@ include_once 'connect.php';
 <center>
     <body>
     <section id="infoBox">
-        <table>
-            <tr>
+        <?php
+            include 'connect.php';
+            $id = $_SESSION['usr_id'];
+            $result=mysqli_query($con, "SELECT website_name, email_username, password from cushome where id='". $id . "'");
+            if(mysqli_num_rows($result) != 0){
+            echo "<tr>
                 <th>URL</th>
                 <th>EMAIL/USERNAME</th>
                 <th>PASSWORD</th>
-            </tr>
-            <?php 
-            //Leave for Zaynab to do :)
-            ?>
-        </table>
+                </tr>"
+            while($row = mysqli_fetch_row($result)){
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td></tr>";
+            }
+        }
+        else{
+            echo "You have no information present. Please click the button below to add information.";
+        }
+        ?>
     </section>
     </body>
 </center>
