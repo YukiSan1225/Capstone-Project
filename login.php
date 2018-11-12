@@ -83,6 +83,9 @@ if (isset($_POST['login'])) {
         <div class="col-md-4 col-md-offset-4 text-center">    
         New User? <a href="register.php">Sign Up Here</a>
         </div>
+        <div class="col-md-4 col-md-offset-4 text-center">    
+        Forgot Password? <a href="password-reset.php">Forgot Password</a>
+        </div>
     </div>
 </div>
 

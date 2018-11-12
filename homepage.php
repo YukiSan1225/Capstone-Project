@@ -43,8 +43,8 @@ include_once 'connect.php';
         <table>
             <tr>
                 <th>URL</th>
-                <th>DATE</th>
-                <th>PASSWORDS</th>
+                <th>EMAIL/USERNAME</th>
+                <th>PASSWORD</th>
             </tr>
             <?php 
             //Leave for Zaynab to do :)
