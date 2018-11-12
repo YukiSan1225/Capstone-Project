@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($con, "SELECT * FROM customer WHERE Email_Address = '" . $email . "' and Password = sha1('" . $password . "')");
 
     if ($row = mysqli_fetch_array($result)) {
-        $_SESSION['usr_id'] = $row['customerID'];
+        $_SESSION['usr_id'] = $row['cusid'];
         $_SESSION['usr_name'] = $row['FName'];
         header("Location: homepage.php");
     } else {
