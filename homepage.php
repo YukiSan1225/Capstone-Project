@@ -50,7 +50,7 @@ include_once 'connect.php';
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td><input name=\"website_name\ type=\"text\">".$row["website_name"]."</td><td><input name=\"email_add\" type=\"text\">".$row["email_username"]."</td><td><input name=\"password\" type=\"text\">".$row["password"]."</td><td><input type=\"button\" name=\"deleteButton\" value=\"Delete\" onclick=\"deleteRow()\"></td></tr>";
+                echo "<tr><td><input name=\"website_name\ type=\"hidden\" value=".$row["website_name"]."></td><td><input name=\"email_add\" type=\"hidden\" value=".$row["email_username"]."></td><td><input name=\"password\" type=\"hidden\" value=".$row["password"]."></td><td><input type=\"button\" name=\"deleteButton\" value=\"Delete\" onclick=\"deleteRow()\"></td></tr>";
             }
             echo "</table>";
         }
