@@ -14,8 +14,10 @@ INSERT INTO customer (Lname, FName, Email_Address, Phone, Password) VALUES ("Joh
 
 CREATE TABLE cushome (
 website_name varchar(50) NOT NULL,
+    tnum int not null,
     cusid int(10) NOT NULL,
     password varchar(30) NOT NULL,
+    primary key(tnum),
     CONSTRAINT `fk_cusid`
         FOREIGN KEY (cusid) REFERENCES customer (cusid)
         ON DELETE CASCADE

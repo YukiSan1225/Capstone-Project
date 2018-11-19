@@ -1,9 +1,7 @@
 <?php
 session_start();
-include_once 'connect.php';
-?>
+include 'connect.php';
 
-<?php
     if(isset($_POST['deleteButton'])){
         $websitename = $_POST['website_name'];
         $emailadd = $_POST['email_add'];
@@ -65,7 +63,7 @@ include_once 'connect.php';
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td id=\"website_name\">".$row["website_name"]."</td><td id=\"email_add\">".$row["email_username"]."</td><td id=\"password\">".$row["password"]."</td><td><input type=\"button\" name=\"deleteButton\" id=\"deleteButton\" value=\"Delete\" onclick=\"deleteRow(this)\"></td></tr>";
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td><button><a href=delete.php?id=".$row["tnum"].">Delete</button></td></tr>";
             }
             echo "</table>";
         }
