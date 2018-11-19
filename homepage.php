@@ -55,7 +55,7 @@ include 'connect.php';
         <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="infoBox">
         <?php
         $id = $_SESSION['usr_id'];
-        $result=mysqli_query($con, "SELECT website_name, email_username, password from cushome where cusid='". $id . "'");
+        $result=mysqli_query($con, "SELECT website_name, email_username, password, tnum from cushome where cusid='". $id . "'");
         if(mysqli_num_rows($result) > 0){
             echo "<table id=\"userTable\"><tr>
                 <th>URL</th>
@@ -63,7 +63,7 @@ include 'connect.php';
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?id=".$row["tnum"]."'>Delete</a></button></td></tr>";
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?id=".$intval(row["tnum"])."'>Delete</a></button></td></tr>";
             }
             echo "</table>";
         }
