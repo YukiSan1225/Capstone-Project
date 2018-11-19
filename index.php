@@ -32,8 +32,8 @@ function getPass(){
             pass+=numset.charAt(Math.floor(Math.random() * numset.length));
         }
         //displaying the password in the html page
-        var long_password = documnet.getElementById("long_password");
-        long_password=pass;
+        var long_password=document.getElementById("long_password");
+        long_password.value=pass;
 }
 </script>
 <html>
@@ -76,7 +76,7 @@ function getPass(){
         <h1>Generate a password?</h1>
         <form onsubmit="return false">
             <input type="Click 'Button' to generate password" id="long_password" placeholder="Password here..." style="width: 750px; height: 40px; font-size: 25px">
-            <button type="submit" class="button_1" onclick="getData()">Generate</button>
+            <button type="submit" class="button_1" onclick="getPass()">Generate</button>
         </form>
     </div>
 </section>
