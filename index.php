@@ -3,6 +3,39 @@ session_start();
 include_once 'connect.php';
 ?>
 <!DOCTYPE html>
+<script>
+function getPass(){
+//defining the character sets, so that it would be easy to choose letters
+        //from them
+        var lower_charset = "abcdefghijklmnopqrstuvwxyz"; //lower case characters
+        var upper_charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//upper case characters
+        var special_charset="?.$@;:_^#![]{}"; //special characters
+        var numset="0123456789";//numeric characters
+        var minLength=16; //minimum length of the password
+        var maxLength=24; //maximum length of password
+        //generating a random length between 16 and 24
+        var length = Math.floor(Math.random() * (maxLength-minLength+1)) + minLength;
+        //defining a variable to store the password
+        var pass="";
+        //adding length-6 number of random lowercase characters to the password
+        for(var i=0;i<length-6;i++){
+            pass+=lower_charset.charAt(Math.floor(Math.random() * lower_charset.length));
+        }
+        //adding 3 random upper case characters
+        for(var i=0;i<3;i++){
+            pass+=upper_charset.charAt(Math.floor(Math.random() * upper_charset.length));
+        }
+        //adding one random special character
+        pass+=special_charset.charAt(Math.floor(Math.random() * special_charset.length));
+        //adding two random numbers
+        for(var i=0;i<2;i++){
+            pass+=numset.charAt(Math.floor(Math.random() * numset.length));
+        }
+        //displaying the password in the html page
+        var long_password = documnet.getElementById("long_password");
+        long_password=pass;
+}
+</script>
 <html>
 <head>
     <meta charset="utf-8">
@@ -67,39 +100,6 @@ include_once 'connect.php';
         </div>
     </div>
 </section>
-<script>
-function getPass(){
-//defining the character sets, so that it would be easy to choose letters
-        //from them
-        var lower_charset = "abcdefghijklmnopqrstuvwxyz"; //lower case characters
-        var upper_charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//upper case characters
-        var special_charset="?.$@;:_^#![]{}"; //special characters
-        var numset="0123456789";//numeric characters
-        var minLength=16; //minimum length of the password
-        var maxLength=24; //maximum length of password
-        //generating a random length between 16 and 24
-        var length = Math.floor(Math.random() * (maxLength-minLength+1)) + minLength;
-        //defining a variable to store the password
-        var pass="";
-        //adding length-6 number of random lowercase characters to the password
-        for(var i=0;i<length-6;i++){
-            pass+=lower_charset.charAt(Math.floor(Math.random() * lower_charset.length));
-        }
-        //adding 3 random upper case characters
-        for(var i=0;i<3;i++){
-            pass+=upper_charset.charAt(Math.floor(Math.random() * upper_charset.length));
-        }
-        //adding one random special character
-        pass+=special_charset.charAt(Math.floor(Math.random() * special_charset.length));
-        //adding two random numbers
-        for(var i=0;i<2;i++){
-            pass+=numset.charAt(Math.floor(Math.random() * numset.length));
-        }
-        //displaying the password in the html page
-        var long_password = documnet.getElementById("long_password");
-        long_password=pass;
-}
-</script>
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <footer>
