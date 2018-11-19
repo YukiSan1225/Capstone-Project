@@ -44,19 +44,31 @@ include_once 'connect.php';
         $id = $_SESSION['usr_id'];
         $result=mysqli_query($con, "SELECT website_name, email_username, password from cushome where cusid='". $id . "'");
         if(mysqli_num_rows($result) > 0){
-            echo "<table><tr>
+            echo "<table id=\"userTable\"><tr>
                 <th>URL</th>
                 <th>EMAIL/USERNAME</th>
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td></tr>";
+                echo "<tr><td><input name=\"website_name\ type=\"text\">".$row["website_name"]."</td><td><input name=\"email_add\" type=\"text\">".$row["email_username"]."</td><td><input name=\"password\" type=\"text\">".$row["password"]."</td><td><input type=\"button\" name=\"deleteButton\" value=\"Delete\" onclick=\"deleteRow()\"></td></tr>";
             }
             echo "</table>";
         }
         else{
             echo "You have no information present. Please click the button below to add information.";
         }
+        ?><?php
+            if(isset($_POST['deleteButton'])){
+                $websitename = $_POST['website_name'];
+                $emailadd = $_POST['email_add'];
+                $pass = $_POST['password'];
+
+                $del = mysqli_query($con, "delete from cushome where website_name='" . $websitename ."' and email_username='". $emailadd ."' and password='". $pass ."'");
+
+                if(!$del){
+                    echo 'Could not delete information. Please contact admin.';
+                }
+            }
         ?>
     </section>
     </body>
@@ -67,7 +79,12 @@ include_once 'connect.php';
     </button>
     <button id="popup" style="float: left" onclick="div_show()">Add Information</button>
 </div>
-
+<script>
+function deleteRow(r){
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("userTable").deleteRow(i);
+}
+</script>
 <script src="js/jquery-1.10.2.js"></script>
 <footer>
     <p>Team Blanco, Copyright &copy; 2017</p>
