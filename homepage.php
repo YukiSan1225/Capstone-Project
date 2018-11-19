@@ -2,6 +2,20 @@
 session_start();
 include_once 'connect.php';
 ?>
+
+<?php
+    if(isset($_POST['deleteButton'])){
+        $websitename = $_POST['website_name'];
+        $emailadd = $_POST['email_add'];
+        $pass = $_POST['password'];
+
+        $del = mysqli_query($con, "delete from cushome where website_name='" . $websitename ."' and email_username='". $emailadd ."' and password='". $pass ."'");
+
+        if(!$del){
+            echo 'Could not delete information. Please contact admin.';
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +54,7 @@ include_once 'connect.php';
 <center>
     <body>
     <section id="infoBox">
+        <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="infoBox">
         <?php
         $id = $_SESSION['usr_id'];
         $result=mysqli_query($con, "SELECT website_name, email_username, password from cushome where cusid='". $id . "'");
@@ -57,19 +72,8 @@ include_once 'connect.php';
         else{
             echo "You have no information present. Please click the button below to add information.";
         }
-        ?><?php
-            if(isset($_POST['deleteButton'])){
-                $websitename = $_POST['website_name'];
-                $emailadd = $_POST['email_add'];
-                $pass = $_POST['password'];
-
-                $del = mysqli_query($con, "delete from cushome where website_name='" . $websitename ."' and email_username='". $emailadd ."' and password='". $pass ."'");
-
-                if(!$del){
-                    echo 'Could not delete information. Please contact admin.';
-                }
-            }
         ?>
+        </form>
     </section>
     </body>
 </center>
