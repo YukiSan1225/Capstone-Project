@@ -1,9 +1,11 @@
 <?php
-include_once 'connect.php';
+session_start();
 
 if(isset($_SESSION['usr_id'])!="") {
     header("Location: index.php");
 }
+
+include_once 'connect.php';
 //set validation error flag as false
 $error = false;
 
