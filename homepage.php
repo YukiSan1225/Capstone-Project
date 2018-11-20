@@ -79,7 +79,7 @@ include 'connect.php';
     <button type="button" value="Show Passwords" style="float: right">
         Show Passwords
     </button>
-    <button type="button" value="Add Information" onclick="document.location.href='add.php';">Add Information</button>
+    <button type="button" value="Add Information" onclick="document.location.href='add.php?id=<?php echo $_SESSION['usr_id'];';">Add Information</button>
 </div>
 <script>
 function deleteRow(r){

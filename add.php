@@ -14,7 +14,7 @@ if (isset($_POST['add'])) {
     $url = mysqli_real_escape_string($con, $_POST['url']);
     $email_username = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-    $usrid = $_SESSION['usr_id'];
+    $usrid = $_GET['id'];
 
     if (!$error) {
         if(mysqli_query($con, "INSERT INTO cushome (website_name, cusid, password, email_username) VALUES ('" . $url . "', '" . $usrid . "', '" . $password . "', '" . $email_username . "', '" . $password . "'")) {
