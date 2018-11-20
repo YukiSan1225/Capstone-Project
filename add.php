@@ -8,7 +8,7 @@ if(isset($_SESSION['usr_id'])!="") {
 $error = false;
 
 //check if form is submitted
-if (isset($_POST['submit'])) {
+if (isset($_POST['add'])) {
     $url = mysqli_real_escape_string($con, $_POST['url']);
     $email_username = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -50,8 +50,8 @@ if (isset($_POST['submit'])) {
         <!-- menu items -->
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php">Login</a></li>
-                <li class="active"><a href="register.php">Sign Up</a></li>
+                <li><a href="homepage.php">Homepage</a></li>
+                <li class="active"><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
     </div>
@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
                         <input type="password" name="password" placeholder="Password" required class="form-control" />
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" value="Add" class="btn btn-primary" />
+                        <input type="submit" name="add" value="Add" class="btn btn-primary" />
                     </div>
                 </fieldset>
             </form>
