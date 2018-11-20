@@ -53,6 +53,8 @@ if (isset($_POST['submit'])) {
         } else {
             $errormsg = "Error in registering...Please try again later!";
         }
+        // ENCODE("Zaynab",sha1("Block"))
+        // "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES ('ENCODE(" . $lname . ",sha1("ERPG"))'
     }
     }
 }

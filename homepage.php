@@ -79,23 +79,8 @@ include 'connect.php';
     <button type="button" value="Show Passwords" style="float: right">
         Show Passwords
     </button>
-    <button id="popup" style="float: left" onclick="div_show()">Add Information</button>
+    <button id="popup" style="float: left" onclick="add.php">Add Information</button>
 </div>
-<div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-      <form method="post" action="add.php">
-        <div>
-          <h3>Add Information</h3>
-          <label for="url" class="ui-hidden-accessible">URL:</label>
-          <input type="text" name="url" id="url" placeholder="URL">
-          <label for="email_username" class="ui-hidden-accessible">Email/Username:</label>
-          <input type="text" name="email" id="email_username" placeholder="Password">
-          <label for="password" class="ui-hidden-accessible">Password:</label>
-          <input type="password" name="password" id="long_password" placeholder="Password">
-          <input type="submit" data-inline="true" value="Add">
-          <input type="button" data-inline="true" style="float: right" value="Generate" onclick="getPass()">
-        </div>
-      </form>
-    </div>
 <script>
 function deleteRow(r){
     var i = r.parentNode.parentNode.rowIndex;
@@ -103,8 +88,6 @@ function deleteRow(r){
 }
 </script>
 <script src="js/jquery-1.10.2.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script>
 function getPass(){
 //defining the character sets, so that it would be easy to choose letters
