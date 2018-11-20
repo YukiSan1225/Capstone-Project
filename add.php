@@ -9,16 +9,16 @@ $error = false;
 
 //check if form is submitted
 if (isset($_POST['submit'])) {
-    $url = mysqli_real_escape_string($con, $_POST['first_name']);
+    $url = mysqli_real_escape_string($con, $_POST['url']);
     $email_username = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $usrid = $_SESSION['usr_id'];
 
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO cushome(website_name, cusid, password, email_username) VALUES ('" . $url . "', '" . $usrid . "', '" . $password . "', '" . $email_username . "', '" . $password . "'")) {
+        if(mysqli_query($con, "INSERT INTO cushome (website_name, cusid, password, email_username) VALUES ('" . $url . "', '" . $usrid . "', '" . $password . "', '" . $email_username . "', '" . $password . "'")) {
             header("Location: homepage.php");
         } else {
-            $errormsg = "Error in registering...Please try again later!";
+            $errormsg = "Error in adding information...Please try again later!";
         }
         // ENCODE("Zaynab",sha1("Block"))
         // "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES ('ENCODE(" . $lname . ",sha1("ERPG"))'
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4 well">
-            <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="signupform">
+            <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="addform">
                 <fieldset>
                     <legend>Add Information</legend>
                     <div class="form-group">
@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="form-group">
                         <label for="name">Email/Username</label>
-                        <input type="text" name="email" placeholder="Email/Username" required value="<?php if($error) echo $email; ?>" class="form-control" />
+                        <input type="text" name="email" placeholder="Email/Username" required value="<?php if($error) echo $email_username; ?>" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label for="name">Password</label>
