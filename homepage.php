@@ -79,7 +79,7 @@ include 'connect.php';
     <button type="button" value="Show Passwords" style="float: right">
         Show Passwords
     </button>
-    <button id="popup" style="float: left" onclick="add.php">Add Information</button>
+    <input type='button' value="Add Information" style="float: left" onclick="document.location.href='add.php';"/>
 </div>
 <script>
 function deleteRow(r){
