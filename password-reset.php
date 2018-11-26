@@ -1,4 +1,7 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require '/vendor/autoload.php';
 require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
     $email = mysqli_real_escape_string($con, $_POST['email']);
