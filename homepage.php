@@ -33,7 +33,7 @@ include 'connect.php';
         </div>
         <nav>
             <ul>
-                <li class="current"><a href="index.html">Home</a></li>
+                <li class="current"><a href="index.php">Home</a></li>
                 <li><a href="about.html">Settings</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
@@ -63,7 +63,7 @@ include 'connect.php';
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td><input type=\"password\" id=\"togglePass\">".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".$row["tnum"]."'>Delete</a></button></td><td><button type=\"button\" value=\"Show Password\" onclick=\"Toggle()\"></td></tr>";
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td><input type=\"password\" id=\"togglePass\" value=".$row["password"]." readonly></td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".$row["tnum"]."'>Delete</a></button></td><td><button type=\"button\" value=\"Show Password\" onclick=\"Toggle()\">Show Password</button></td></tr>";
             }
             echo "</table>";
         }
