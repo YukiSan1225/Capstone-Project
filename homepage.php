@@ -63,7 +63,7 @@ include 'connect.php';
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".$row["tnum"]."'>Delete</a></button></td></tr>";
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td><input type=\"password\" id=\"togglePass\">".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".$row["tnum"]."'>Delete</a></button></td><td><button type=\"button\" value=\"Show Password\" onclick=\"Toggle()\"></td></tr>";
             }
             echo "</table>";
         }
@@ -76,9 +76,6 @@ include 'connect.php';
     </body>
 </center>
 <div id="showPWButton">
-    <button type="button" value="Show Passwords" style="float: right">
-        Show Passwords
-    </button>
     <form method="post" action="add.php">
     <input type="hidden" name="id" value="<?php echo $_SESSION['usr_id']; ?>">
     <button type="button" value="Add Information">Add Information</button>
@@ -123,6 +120,15 @@ function getPass(){
         var long_password=document.getElementById("long_password");
         long_password.value=pass;
 }
+function Toggle() { 
+        var temp = document.getElementById("togglePass"); 
+        if (temp.type === "password") { 
+            temp.type = "text"; 
+        } 
+        else {
+            temp.type = "password"; 
+        } 
+} 
 </script>
 <footer>
     <p>Team Blanco, Copyright &copy; 2017</p>
