@@ -45,7 +45,7 @@ if(isset($_POST) & !empty($_POST)){
         if(!$mail->Send()){
         echo "Mailer Error: " . $mail->ErrorInfo;
         }else{
-            if(mysqli_query($con, "update customer set Password = md5('" . $newpass . "') where cusid='" .$id. "'")){
+            if(mysqli_query($con, "update customer set Password = sha1('" . $newpass . "') where cusid='" .$id. "'")){
             echo "<div class='error'>
             <p>An email has been sent to you with instructions on how to reset your password.</p>
             </div><br /><br /><br />";
