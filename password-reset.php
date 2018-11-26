@@ -77,7 +77,7 @@ if(isset($_POST) & !empty($_POST)){
             $symbols["numbers"] = '1234567890';
             $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
          
-            $characters = split(",",$characters); // get characters types to be used for the passsword
+            $characters = explode(",",$characters); // get characters types to be used for the passsword
             foreach ($characters as $key=>$value) {
                 $used_symbols .= $symbols[$value]; // build a string with all characters
             }
