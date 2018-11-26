@@ -1,7 +1,7 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require '/vendor/autoload.php';
+require '/var/www/html/vendor/autoload.php';
 require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
     $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -43,10 +43,11 @@ if(isset($_POST) & !empty($_POST)){
         if(!$mail->Send()){
         echo "Mailer Error: " . $mail->ErrorInfo;
         }else{
-        echo "<div class='error'>
-        <p>An email has been sent to you with instructions on how to reset your password.</p>
-        </div><br /><br /><br />";
-        $update = mysqli_query($con, "update customer set Password = md5('".$newpass."') where Password='".$oripass."' and Email_Address='".$email."'");
+            if(mysqli_query($con, "update customer set Password = md5('" . $newpass . "') where cusid='" .$r['cusid']. "'")){
+            echo "<div class='error'>
+            <p>An email has been sent to you with instructions on how to reset your password.</p>
+            </div><br /><br /><br />";
+            }
         }
     }
     else{
