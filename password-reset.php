@@ -48,6 +48,9 @@ if(isset($_POST) & !empty($_POST)){
             <p>An email has been sent to you with instructions on how to reset your password.</p>
             </div><br /><br /><br />";
             }
+            else{
+                die('Something went wrong: '.mysql_error());
+            }
         }
     }
     else{
