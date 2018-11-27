@@ -60,10 +60,10 @@ include 'connect.php';
             echo "<table id=\"userTable\"><tr>
                 <th>URL</th>
                 <th>EMAIL/USERNAME</th>
-                <th>PASSWORD</th>
+                <th class=\"password\">PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td><input type=\"password\" id=\"togglePass\" value=".$row["password"]." readonly></td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".$row["tnum"]."'>Delete</a></button></td><td><button type=\"button\" value=\"Show Password\" onclick=\"Toggle()\">Show Password</button></td></tr>";
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td id=\"password\">".$row["password"]."</td></tr>";
             }
             echo "</table>";
         }
@@ -76,6 +76,7 @@ include 'connect.php';
     </body>
 </center>
 <div id="showPWButton">
+    <input id="password" name="Show Password" type="button" value="Show Password"/>
     <form method="post" action="add.php">
     <input type="hidden" name="id" value="<?php echo $_SESSION['usr_id']; ?>">
     <button type="button" value="Add Information" onclick="location.href='add.php'">Add Information</button>

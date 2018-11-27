@@ -169,7 +169,12 @@ footer{
   background-color:#000080;
   text-align: center;
 }
-
+#password:checked ~ table .password {
+  visibility: visible;
+}
+th, td{
+  visibility: hidden;
+}
 /* Media Queries */
 @media(max-width: 768px){
   header #branding,
