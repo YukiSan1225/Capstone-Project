@@ -78,7 +78,7 @@ include 'connect.php';
 <div id="showPWButton">
     <form method="post" action="add.php">
     <input type="hidden" name="id" value="<?php echo $_SESSION['usr_id']; ?>">
-    <button type="button" value="Add Information">Add Information</button>
+    <button type="button" value="Add Information" onclick="location.href='add.php'">Add Information</button>
     </form>
 </div>
 <script>
