@@ -63,7 +63,8 @@ include 'connect.php';
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".intval($row["tnum"])."'>Delete</a></button></td></tr>";
+                $password = mysqli_query($con, "select password from cushome where tnum='".$row["tnum"]."' and password=AES_DECRYPT('".$row["password"]."',SHA1(\"ERPG\"))");
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$password."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".intval($row["tnum"])."'>Delete</a></button></td></tr>";
             }
             echo "</table>";
         }
