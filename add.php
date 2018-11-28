@@ -12,7 +12,7 @@ if (isset($_POST['add'])) {
     $usrid = $_SESSION['usr_id'];
 
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO cushome(website_name, cusid, password, email_username) VALUES ('" . $url . "', '" . $usrid . "', 'AES_ENCRYPT(" . $password . ", SHA1(\"ERPG\"))', '" . $email_username . "')")) {
+        if(mysqli_query($con, "INSERT INTO cushome(website_name, cusid, password, email_username) VALUES ('" . $url . "', '" . $usrid . "', AES_ENCRYPT('" . $password . "', SHA1(\"ERPG\")), '" . $email_username . "')")) {
             header("Location: homepage.php");
         } else {
             $errormsg = "Error in adding information... Please try again later!";
