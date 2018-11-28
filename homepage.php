@@ -60,10 +60,10 @@ include 'connect.php';
             echo "<table id=\"userTable\"><tr>
                 <th>URL</th>
                 <th>EMAIL/USERNAME</th>
-                <th class=\"password\">PASSWORD</th>
+                <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td id=\"password\">".$row["password"]."</td></tr>";
+                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".$row["tnum"]."'>Delete</a></button></td></tr>";
             }
             echo "</table>";
         }
@@ -76,10 +76,11 @@ include 'connect.php';
     </body>
 </center>
 <div id="showPWButton">
-    <input id="password" name="Show Password" type="button" value="Show Password"/>
+    <input type="button" id="btnHide" value="Hide Passwords" style="float: right"></button>
+    <input type="button" id="btnShow" value="Show Passwords" style="float: right"></button>
     <form method="post" action="add.php">
     <input type="hidden" name="id" value="<?php echo $_SESSION['usr_id']; ?>">
-    <button type="button" value="Add Information" onclick="location.href='add.php'">Add Information</button>
+    <input type="button" value="Add Information" onclick="location.href='add.php'"></button>
     </form>
 </div>
 <script>
@@ -121,15 +122,18 @@ function getPass(){
         var long_password=document.getElementById("long_password");
         long_password.value=pass;
 }
-function Toggle() { 
-        var temp = document.getElementById("togglePass"); 
-        if (temp.type === "password") { 
-            temp.type = "text"; 
-        } 
-        else {
-            temp.type = "password"; 
-        } 
-} 
+$(document).ready(function() {
+            $('#btnShow').click(function() {
+                $('td:nth-child(3)').show();
+                $('td:nth-child(4)').show();
+        });
+});
+$(document).ready(function(){
+        $('#btnHide').click(function(){
+                $('td:nth-child(3)').hide();
+                $('td:nth-child(4)').hide();
+        });
+});
 </script>
 <footer>
     <p>Team Blanco, Copyright &copy; 2017</p>
