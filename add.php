@@ -70,10 +70,12 @@ if (isset($_POST['add'])) {
                     </div>
                     <div class="form-group">
                         <label for="name">Password</label>
-                        <input type="password" name="password" placeholder="Password" required class="form-control" />
+                        <input type="password" name="password" placeholder="Password" id="long_password" required class="form-control" />
+                        <input type="checkbox" name="showPass" onclick="togglePass();"/>Show Password
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="add" value="Add" class="btn btn-primary" />
+                        <input type="submit" name="add" value="Add Information" class="btn btn-primary" style="float: left"/>
+                        <input type="button" name="generate" value="Generate Password" class="btn btn-primary" onclick="getPass();" style="float: right"/>
                     </div>
                 </fieldset>
             </form>
@@ -84,5 +86,46 @@ if (isset($_POST['add'])) {
 </div>
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script>
+function getPass(){
+//defining the character sets, so that it would be easy to choose letters
+        //from them
+        var lower_charset = "abcdefghijklmnopqrstuvwxyz"; //lower case characters
+        var upper_charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//upper case characters
+        var special_charset="?.$@;:_^#![]{}"; //special characters
+        var numset="0123456789";//numeric characters
+        var minLength=16; //minimum length of the password
+        var maxLength=24; //maximum length of password
+        //generating a random length between 16 and 24
+        var length = Math.floor(Math.random() * (maxLength-minLength+1)) + minLength;
+        //defining a variable to store the password
+        var pass="";
+        //adding length-6 number of random lowercase characters to the password
+        for(var i=0;i<length-6;i++){
+            pass+=lower_charset.charAt(Math.floor(Math.random() * lower_charset.length));
+        }
+        //adding 3 random upper case characters
+        for(var i=0;i<3;i++){
+            pass+=upper_charset.charAt(Math.floor(Math.random() * upper_charset.length));
+        }
+        //adding one random special character
+        pass+=special_charset.charAt(Math.floor(Math.random() * special_charset.length));
+        //adding two random numbers
+        for(var i=0;i<2;i++){
+            pass+=numset.charAt(Math.floor(Math.random() * numset.length));
+        }
+        //displaying the password in the html page
+        var long_password=document.getElementById("long_password");
+        long_password.value=pass;
+}
+function togglePass() {
+    var x = document.getElementById("long_password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+} 
+</script>
 </body>
 </html>

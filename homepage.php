@@ -34,7 +34,7 @@ include 'connect.php';
         <nav>
             <ul>
                 <li class="current"><a href="index.php">Home</a></li>
-                <li><a href="about.html">Settings</a></li>
+                <li><a href="passreset.php">Password Reset</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
