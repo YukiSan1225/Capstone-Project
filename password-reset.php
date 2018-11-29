@@ -5,7 +5,7 @@ require '/var/www/html/vendor/autoload.php';
 require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
     $email = mysqli_real_escape_string($con, $_POST['email']);
-    $result=mysqli_query($con, "SELECT * FROM customer WHERE Email_Address = '" . $email ."'");
+    $result=mysqli_query($con, "SELECT * FROM customer WHERE Email_Address = sha1('" . $email ."')");
     if(mysqli_num_rows($result) == 1){
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_";
         $r = mysqli_fetch_assoc($result);
@@ -13,7 +13,7 @@ if(isset($_POST) & !empty($_POST)){
         $newpass = substr( str_shuffle( $chars ), 0, 8 );
         $id = $r['cusid'];
         $name = $r['FName'];
-        $to = $r['Email_Address'];
+        $to = $email;
         $output='<p>Dear user,</p>';
         $output.='<p>Please refer to the password that is listed below. If you need to change your password, please use the password below to login and change it.</p>';
         $output.='<p>-------------------------------------------------------------</p>';
