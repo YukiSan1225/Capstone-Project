@@ -13,7 +13,7 @@ if (isset($_POST['passres'])) {
         $error = true;
         $cpassword_error = "Password and Confirm Password doesn't match";
     }else{
-        if (mysqli_query($con, "update customer set Password = sha1('" . $newpass . "') where cusid='" .$id. "'")) {
+        if (mysqli_query($con, "update customer set Password = sha1('" . $password . "') where cusid='" .$id. "'")) {
             header("Location: homepage.php");
         } else {
             $errormsg = "Error changing password. Please contact ERPG Support Team.";
