@@ -21,8 +21,8 @@ include 'connect.php';
         </div>
         <nav>
             <ul>
-                <li class="current"><a href="index.php">Home</a></li>
-                <li><a href="passreset.php">Password Reset</a></li>
+                <li class="current"><a href="homepage.php">Home</a></li>
+                <li><a href="passchange.php">Change Password</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
