@@ -12,13 +12,11 @@ if (isset($_POST['add'])) {
     $usrid = $_SESSION['usr_id'];
 
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO cushome(website_name, cusid, password, email_username) VALUES ('" . $url . "', '" . $usrid . "', to_base64('" . $password . "'), '" . $email_username . "')")) {
+        if(mysqli_query($con, "INSERT INTO cushome(website_name, cusid, password, email_username) VALUES ('" . $url . "', '" . $usrid . "', to_base64('" . $password . "'), to_base64('" . $email_username . "'))")) {
             header("Location: homepage.php");
         } else {
             $errormsg = "Error in adding information... Please try again later!";
         }
-        // ENCODE("Zaynab",sha1("Block"))
-        // "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES ('ENCODE(" . $lname . ",sha1("ERPG"))'
     }
 }
 ?>

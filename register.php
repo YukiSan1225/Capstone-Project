@@ -41,20 +41,18 @@ if (isset($_POST['submit'])) {
         $cpassword_error = "Password and Confirm Password doesn't match";
     }
     //Check to see if user exists in DB
-    $prevUser = mysqli_query($con, "SELECT * from customer where Email_Address='" . $email . "'");
+    $prevUser = mysqli_query($con, "SELECT * from customer where Email_Address=sha1('" . $email . "')");
     if($row = mysqli_fetch_array($prevUser)){
         $error = true;
         $email_error="Please use another email address.";
     }
     else{
     if (!$error) {
-        if(mysqli_query($con, "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES ('" . $lname . "', '" . $fname . "', '" . $email . "', '" . $phone . "', sha1('" . $password . "'))")) {
+        if(mysqli_query($con, "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES (sha1('" . $lname . "'), '" . $fname . "', sha1('" . $email . "'), sha1('" . $phone . "'), sha1('" . $password . "'))")) {
             $successmsg = "Successfully Registered! <a href='login.php'>Click here to Login</a>";
         } else {
             $errormsg = "Error in registering...Please try again later!";
         }
-        // ENCODE("Zaynab",sha1("Block"))
-        // "INSERT INTO customer(Lname, FName, Email_Address, Phone, Password) VALUES ('ENCODE(" . $lname . ",sha1("ERPG"))'
     }
     }
 }

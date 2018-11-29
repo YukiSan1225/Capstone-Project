@@ -1,18 +1,6 @@
 <?php
 session_start();
 include 'connect.php';
-
-    if(isset($_POST['deleteButton'])){
-        $websitename = $_POST['website_name'];
-        $emailadd = $_POST['email_add'];
-        $pass = $_POST['password'];
-
-        $del = mysqli_query($con, "delete from cushome where website_name='" . $websitename ."' and email_username='". $emailadd ."' and password='". $pass ."'");
-
-        if(!$del){
-            echo 'Could not delete information. Please contact admin.';
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,8 +51,7 @@ include 'connect.php';
                 <th>PASSWORD</th>
                 </tr>";
             while($row = mysqli_fetch_assoc($result)){
-                $pass = mysqli_query($con, "select from_base64('".$row["password"]."') from cushome where tnum='".intval($row["tnum"])."'");
-                echo "<tr><td>".$row["website_name"]."</td><td>".$row["email_username"]."</td><td>".$row["password"]."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".intval($row["tnum"])."'>Delete</a></button></td></tr>";
+                echo "<tr><td>".$row["website_name"]."</td><td>".base64_decode($row["email_username"])."</td><td>".base64_decode($row["password"])."</td><td><button onclick=\"deleteRow(this)\"><a href='delete.php?tnum=".intval($row["tnum"])."'>Delete</a></button></td></tr>";
             }
             echo "</table>";
         }
