@@ -53,5 +53,5 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ## Acknowledgments
 
 * Thank you Dr. Khan for giving us the tools and the guidance that we needed to complete this project completely. Special thanks to everyone on the team for giving it their all! 
-* Inspiration
-* etc
+
+Copyright © 2018, [ERPG](https://github.com/yukisan1225/Capstone-Project)
