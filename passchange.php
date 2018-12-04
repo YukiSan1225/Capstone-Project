@@ -11,7 +11,7 @@ if (isset($_POST['passres'])) {
     
     if($password != $cpassword) {
         $error = true;
-        $cpassword_error = "Password and Confirm Password doesn't match";
+        $errormsg = "Password and Confirm Password doesn't match";
     }else{
         if (mysqli_query($con, "update customer set Password = sha1('" . $password . "') where cusid='" .$id. "'")) {
             header("Location: homepage.php");
