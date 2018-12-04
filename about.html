@@ -1,177 +1,174 @@
 <!DOCTYPE HTML>
-<html>
-<link rel="stylesheet" href="css/style.css">
+<html xmlns:whitespace="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="style.css">
 <body bgcolor ="silver">
 <center>
 
-<!----navigation table-------->
-<header>
-  <div class="container">
-      <div id="branding">
-          <h1><span class="highlight">E</span>-RPG</h1>
-      </div>
-      <nav>
-          <ul>
-              <li><a href="index.php">Home</a></li>
-              <li class="current"><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="login.php">Login</a></li>
-              <li><a href="register.php">Register</a></li>
-          </ul>
-      </nav>
-  </div>
-</header>
-</td></tr>
-<!---------end navigation table---------->
-<br>
-<h1>  <center> About ERPG  </center></h1>
-<br>
+    <!----navigation table-------->
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">E</span>-RPG</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li class="current"><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="register.php">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    </td></tr>
+    <!---------end navigation table---------->
 
-<p> In a fast paced world where techonology continues to advance,the need for privacy and security has increased substaintally. Weak and reused passwords play a major role in most hacking-related breaches. There are many tips and suggestions for creating better passwords, but people often use personal information to create passwords or recycle commonly used passwords. To avoid breaches and leaks of confidential information, strong and unique passwords have to be used. Furthermore, safety and convenience should be offered as one.</p>
-<br>
+    <section id="showcase">
+        <div class="container">
+            <h1>  <center> About ERPG  </center></h1>
+        </div>
+    </section>
 
-
-<p>  ERPG is a mobile and desktop friendly application the helps users create, store, and maintain their passwords. Each password will be unique and contain at least 16 characters varying between numbers, uppercase/lowercase letters, and special symbols. Users will be able to visit the website and generate a new password with the click of a button. Additionally, users can create an account, which gives them permission to store all the passwords in a secure area. It also links certain passwords to certain websites. This is a convenient way for users to recall their password and avoid having to reset it.</p>
- <table width ="850" height "100" border="1">
-<pre>
-
-
+    
+    <table style="table-layout:fixed" width ="850" height="100" border="1">
+    <pre>
 
 <tr><td>
 <center>
 <!---------Vulnerability Button --------->
 <h2> Vulnerability</h2>
-<img src="smiley.gif" height="150" width="150">
+<img src="vulnerability.jpg" height="300" width="400">
 <br>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
 
-<button onclick="myFunction()" id="myBtn">Read more</button>
+<button onclick="myHideFunction1()" id="VulnerabilityBtn">Read more</button>
 <script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+function myHideFunction1() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("VulnerabilityBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
 }
 </script>
 </center>
 </td>
-<!---------End Vulnerability Button --------->
+    <!---------End Vulnerability Button --------->
 
-<!---------Security Button --------->
+    <!---------Security Button --------->
 
 <td><center>
-<h2> Security  </h2> 
-<img src="smiley.gif" height="150" width="150">
+<h2> Security  </h2>
+<img src="security.jpg" height="300" width="400">
 <br>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots2">...</span><span id="more2">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
 
-<button onclick="myFunction()" id="myBtn">Read more</button>
+<button onclick="myHideFunction2()" id="securityBtn">Read more</button>
 <script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+function myHideFunction2() {
+    var dots2 = document.getElementById("dots2");
+    var moreText = document.getElementById("more2");
+    var btnText = document.getElementById("securityBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
+    if (dots2.style.display === "none") {
+        dots2.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots2.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
 }
 </script>
 </center>
 </td></tr>
-<!---------End Security Button --------->
+        <!---------End Security Button --------->
 
-<!---------Services Button --------->
+        <!---------Services Button --------->
 
 <tr><td><center>
 <h2>  Services & Support </h2>
-<img src="smiley.gif" height="150" width="150">
+<img src="images.jpg" height="300" width="400">
 <br>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots3">...</span><span id="more3">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
 
-<button onclick="myFunction()" id="myBtn">Read more</button>
+<button onclick="myHideFunction3()" id="serviceSupportBtn">Read more</button>
 <script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+function myHideFunction3() {
+    var dots3 = document.getElementById("dots3");
+    var moreText = document.getElementById("more3");
+    var btnText = document.getElementById("serviceSupportBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
+    if (dots3.style.display === "none") {
+        dots3.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots3.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
 }
 </script>
 
 </center>
 </td>
-<!---------End Services Button --------->
+    <!---------End Services Button --------->
 
-<!---------Tecnology Button --------->
+    <!---------Tecnology Button --------->
 
 <td><center>
 <h2> Technology & Leadership</h2>
-<img src="smiley.gif" height="150" width="150">
+<img src="leadership.jpg" height="300" width="400">
 <br>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots4">...</span><span id="more4">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
 
-<button onclick="myFunction()" id="myBtn">Read more</button>
+<button onclick="myHideFunction4()" id="technologyLeadershipBtn">Read more</button>
 
 <script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+function myHideFunction4() {
+    var dots4 = document.getElementById("dots4");
+    var moreText = document.getElementById("more4");
+    var btnText = document.getElementById("technologyLeadershipBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
+    if (dots4.style.display === "none") {
+        dots4.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots4.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+    }
 }
 </script>
 
 </center>
 </td></tr>
-<!---------End Technology Button --------->
+        <!---------End Technology Button --------->
 
 </pre>
-</table>
+    </table>
 
 
 
 
 
 
-<footer>
-<center><h5> Copyright 2018 Texas Southern University </center> </h5>
+    <footer>
+    <p>Team Blanco, Copyright &copy; 2017</p>
 
-</footer> 
+    </footer>
 
 
 </center>
