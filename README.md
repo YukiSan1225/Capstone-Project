@@ -43,7 +43,7 @@ We use [Docker Hub](https://hub.docker.com/r/yukisan1225/erpg_webapp/) for versi
 ## Authors
 
 * **Damien Burks** - *Security System Engineer* - [YukiSan1225](https://github.com/YukiSan1225)
-* **Zaynab Okuns** - *Initial work* - [PurpleBooth](https://github.com/?)
+* **Zaynab Okuns** - *Student* - [Zaynabidia](https://github.com/zaynabidia)
 * **Macklin Thomas** - *Initial work* - [PurpleBooth](https://github.com/?)
 * **Xavier Winters** - *Initial work* - [PurpleBooth](https://github.com/?)
 * **Shawn G.** - *Initial work* - [PurpleBooth](https://github.com/?)
