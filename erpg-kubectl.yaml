@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: erpg-deployment
+spec:
+  selector:
+    matchLabels:
+      app: erpg
+  replicas: 2 
+  template:
+    metadata:
+      labels:
+        app: erpg
+    spec:
+      containers:
+      - name: erpg
+        image: yukisan1225/erpg_webapp:final
+        ports:
+        - containerPort: 443
