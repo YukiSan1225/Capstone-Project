@@ -60,11 +60,11 @@ if (isset($_POST['add'])) {
                     <legend>Add Information</legend>
                     <div class="form-group">
                         <label for="name">URL</label>
-                        <input type="text" name="url" placeholder="URL" required value="<?php if($error) echo $url; ?>" class="form-control" />
+                        <input type="text" name="url" placeholder="URL" required value="<?php if($error) {echo $url;} ?>" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label for="name">Email/Username</label>
-                        <input type="text" name="email" placeholder="Email/Username" required value="<?php if($error) echo $email_username; ?>" class="form-control" />
+                        <input type="text" name="email" placeholder="Email/Username" required value="<?php if($error) {echo $email_username;} ?>" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label for="name">Password</label>
