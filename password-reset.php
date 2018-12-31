@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 require '/var/www/html/vendor/autoload.php';
 require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
+    $erpg_emailaddr = "info.erpg@gmail.com";
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $result=mysqli_query($con, "SELECT * FROM customer WHERE Email_Address = sha1('" . $email ."')");
     if(mysqli_num_rows($result) == 1){
@@ -26,17 +27,17 @@ if(isset($_POST) & !empty($_POST)){
         $subject = "Password Recovery - ERPG Support Team";
 
         $email_to = $email;
-        $fromserver = "info.erpg@gmail.com"; 
+        $fromserver = $erpg_emailaddr; 
         $mail = new PHPMailer();
         $mail->IsSMTP();
         $mail->Host = "smtp.gmail.com"; // Enter your host here
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'tls';
-        $mail->Username = "info.erpg@gmail.com"; // Enter your email here
+        $mail->Username = $erpg_emailaddr; // Enter your email here
         $mail->Password = "ERPG_Encoder1"; //Enter your password here
         $mail->Port = 587;
         $mail->IsHTML(true);
-        $mail->From = "info.erpg@gmail.com";
+        $mail->From = $erpg_emailaddr;
         $mail->FromName = "ERPG Support Team";
         $mail->Sender = $fromserver; // indicates ReturnPath header
         $mail->Subject = $subject;
