@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         '#-moz-binding[\x00-\x20]*:#u',
     
         // Match style attributes
-        '#(<[^>]+[\x00-\x20\"\'\/])style=[^>]*>?#iUu',
+        '#("<[^>]+[\x00-\x20\"\'\/])style=[^>]*>"?#iUu',
     
         // Match unneeded tags
         '#</*(applet|meta|xml|blink|link|style|script|embed|object|iframe|frame|frameset|ilayer|layer|bgsound|title|base)[^>]*>?#i'
