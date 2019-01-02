@@ -111,17 +111,17 @@ if (isset($_POST['submit'])) {
 
                     <div class="form-group">
                         <label for="name">First Name</label>
-                        <input type="text" name="first_name" placeholder="Enter First Name" required value="<?php if($error) {echo $fname;} ?>" class="form-control" />
+                        <input type="text" name="first_name" placeholder="Enter First Name" class="form-control"/>
                         <span class="text-danger"><?php if (isset($fname_error)) {echo $fname_error;} ?></span>
                     </div>
                     <div class="form-group">
                         <label for="name">Last Name</label>
-                        <input type="text" name="last_name" placeholder="Enter Last Name" required value="<?php if($error) {echo $lname;} ?>" class="form-control" />
+                        <input type="text" name="last_name" placeholder="Enter Last Name" class="form-control" />
                         <span class="text-danger"><?php if (isset($lname_error)) {echo $lname_error;} ?></span>
                     </div>
                     <div class="form-group">
                         <label for="name">Email</label>
-                        <input type="text" name="email" placeholder="Email" required value="<?php if($error) {echo $email;} ?>" class="form-control" />
+                        <input type="text" name="email" placeholder="Email" class="form-control" />
                         <span class="text-danger"><?php if (isset($email_error)) {echo $email_error;} ?></span>
                     </div>
                     <div class="form-group">
