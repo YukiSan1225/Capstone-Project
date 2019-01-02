@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
     }
     if(!preg_match("/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/",$phone) && strlen($phone) == 10){
         $error = true;
-        $phone_error = "Invalid Phone Number"
+        $phone_error = "Invalid Phone Number";
     }
     if(strlen($password) < 6) {
         $error = true;
