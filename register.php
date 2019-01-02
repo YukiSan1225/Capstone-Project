@@ -18,17 +18,30 @@ if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+    $patterns = array( //Patterns to test against XSS
+        // Match any attribute starting with "on" or xmlns
+        '#(<[^>]+[\x00-\x20\"\'\/])(on|xmlns)[^>]*>?#iUu',
     
+        // Match javascript:, livescript:, vbscript: and mocha: protocols
+        '!((java|live|vb)script|mocha):(\w)*!iUu',
+        '#-moz-binding[\x00-\x20]*:#u',
+    
+        // Match style attributes
+        '#(<[^>]+[\x00-\x20\"\'\/])style=[^>]*>?#iUu',
+    
+        // Match unneeded tags
+        '#</*(applet|meta|xml|blink|link|style|script|embed|object|iframe|frame|frameset|ilayer|layer|bgsound|title|base)[^>]*>?#i'
+    );
     //name can contain only alpha characters and space
-    if (!preg_match("/^[a-zA-Z ]+$/",$fname)) {
+    if (!preg_match($patterns,$fname)) {
         $error = true;
         $fname_error = "First name must contain only alphabets and space";
     }
-    if (!preg_match("/^[a-zA-Z ]+$/",$lname)) {
+    if (!preg_match($patterns,$lname)) {
         $error = true;
         $lname_error = "Last name must contain only alphabets and space";
     }
-    if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+    if(!filter_var($email,FILTER_VALIDATE_EMAIL) && !preg_match($patterns,$email)) {
         $error = true;
         $email_error = "Please Enter Valid Email ID";
     }
