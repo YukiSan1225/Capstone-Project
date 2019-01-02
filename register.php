@@ -131,7 +131,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-group">
                         <label for="name">Phone</label>
                         <input type="text" name="phone" placeholder="Enter Phone Number" class="form-control" required/>
-                        <span class="text-danger"><?php if (isset($email_error)) {echo $email_error;} ?></span>
+                        <span class="text-danger"><?php if (isset($phone_error)) {echo $phone_error;} ?></span>
                     </div>
                     <div class="form-group">
                         <label for="name">Password</label>
